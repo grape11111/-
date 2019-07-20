@@ -10,6 +10,7 @@
 系统采用SSH框架，使用JSP生成表现层内容；使用Action作为控制器，接收客户请求，收集数据，实现业务层逻辑调用，并选择恰当视图对客户做出响应；使用JavaBean充当模型，用于数据的存储与提取。
 1.系统功能需求
 1.1“天天淘”前台功能结构图
+![image]https://github.com/grape11111/OnlineShopping/blob/master/images/image.png
 1.2 “天天淘”后台功能结构图
 
 
