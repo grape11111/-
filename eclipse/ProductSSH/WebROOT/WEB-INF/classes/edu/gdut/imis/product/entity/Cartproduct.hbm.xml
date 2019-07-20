@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-6-15 13:47:30 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping default-lazy="false">
+ <class name="edu.gdut.imis.product.entity.Cartproduct" table="cart">
+  <composite-id><!-- 联合主键 -->
+  	<key-property name="uID" column="uID" type="java.lang.String"></key-property>
+  	<key-property name="code" column="code" type="java.lang.String"></key-property>
+  </composite-id>
+  <property generated="never" lazy="false" name="count" type="int">
+   <column name="count"/>
+  </property>
+<!-- <join table="product" inverse="true" >
+         <key column="code" on-delete="cascade"/>
+         <property generated="never" lazy="false" name="name" type="java.lang.String">
+		   <column name="name"/>
+		 </property>
+		 <property generated="never" lazy="false" name="price" type="float">
+		   <column name="price"/>
+		 </property>
+  </join> -->
+  
+  <many-to-one name="pm" class="edu.gdut.imis.product.entity.ProductModel" column="code" not-null="true" insert="false" update="false">
+  </many-to-one>
+ </class>
+</hibernate-mapping>

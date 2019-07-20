@@ -1,0 +1,3 @@
+该配置文件是将项目下的文件映射到Tomcat上
+可以放在以下位置：
+apache-tomcat-9.0.16\conf\Catalina\localhost

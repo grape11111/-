@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<style type="text/css">
+.column {
+    float: left;
+    padding: 15px 50px;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+			
+	.sidemenu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.sidemenu li a {
+    margin-bottom: 2px;
+    display: block;
+    padding: 10px;
+    background-color: #eee;
+    text-decoration: none;
+    color: #666;
+}
+.sidemenu li a:hover {
+    background-color: #555;
+    color: white;
+}
+.sidemenu li a.active {
+    background-color: #008CBA;
+    color: white;
+}
+		</style>
+	</head>
+	<body>
+
+	<div class="clearfix">
+    <div class="column sidemenu">
+
+		<ul class="nav nav-pills nav-stacked">
+		<li><a href="${pageContext.request.contextPath}/Product_display" target="contain" class="active">首页</a></li>
+			<li><a href="Product.jsp" target="contain">商品管理</a></li>
+			<li><a href="${pageContext.request.contextPath}/users_findAllusers" target="contain">会员管理</a></li>
+			<li><a href="Style.jsp" target="contain">类别管理</a></li>
+			<li><a href="${pageContext.request.contextPath}/Pay_findAllorder" target="contain">订单管理</a></li>
+			<li><a href="../../Exit.jsp" target="_parent" class="active">退出登录</a></li>
+		</ul>
+
+</div>
+</div>
+
+
+	</body>
+</html>

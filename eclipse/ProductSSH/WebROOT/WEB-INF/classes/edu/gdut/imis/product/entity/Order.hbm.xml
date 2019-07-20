@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-6-21 16:07:32 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping default-lazy="false">
+ <class name="edu.gdut.imis.product.entity.Order" table="orders">
+  <id name="orderID" type="java.lang.String">
+   <column name="orderID"/>
+   <generator class="assigned"/>
+  </id>
+  <property access="field" generated="never" lazy="false" name="uID" type="java.lang.String">
+   <column name="uID"/>
+  </property>
+  <property generated="never" lazy="false" name="datetime" type="java.lang.String">
+   <column name="datetime"/>
+  </property>
+  <property generated="never" lazy="false" name="status" type="int">
+   <column name="status"/>
+  </property>
+  <property generated="never" lazy="false" name="result" type="int">
+   <column name="result"/>
+  </property>
+  <set lazy="false" name="list" sort="unsorted" table="orderproduct">
+   <key>
+    <column name="orderID"/>
+   </key>
+   <one-to-many class="edu.gdut.imis.product.entity.Orderproduct"/>
+  </set>
+ </class>
+</hibernate-mapping>

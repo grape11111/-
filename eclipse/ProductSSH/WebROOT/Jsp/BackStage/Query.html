@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>商品条件查询</title>
+<style>
+body{text-align:center}
+</style>
+</head>
+<body>
+<form action="${pageContext.request.contextPath}/Product_query" method="post">
+<table width=30% height='200' align="center">
+	<tr>
+		<td>商品条码:</td> 
+		<td><input type="text" name="code" value="" autocomplete="off"></td>
+	</tr>	
+	<tr>
+		<td>商品名称:</td> 
+		<td> <input type="text" name="name" value="" autocomplete="off"></td>
+	</tr>	
+	<tr>
+		<td>商品类别:</td> 
+		<td><select name="style">
+				<option value="Clothes">服装</option>
+				<option value="Food">食物</option>
+				<option value="Book">图书</option>
+				<option value=" ">全部</option>
+		</select></td>
+	</tr>
+	<tr>
+		<td>商品价格:</td>
+		<td><input type="text" name="pricegt" size="6px" align='left'>
+		 ~ 
+		<input type="text" name="pricelt" size="6px" align='right'>
+		</td>		
+	</tr>
+</table>
+</br>
+    <input type="submit" value="确定"> &nbsp;<input type="reset" value="重置">
+</form>
+
+</body>
+</html>

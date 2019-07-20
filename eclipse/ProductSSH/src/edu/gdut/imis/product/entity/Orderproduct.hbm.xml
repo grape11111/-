@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-6-21 16:07:32 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping default-lazy="false">
+ <class name="edu.gdut.imis.product.entity.Orderproduct" table="orderproduct">
+  <composite-id mapped="false" unsaved-value="undefined">
+   <!-- 联合主键 -->
+   <key-property column="orderID" name="orderID" type="java.lang.String"/>
+   <key-property column="code" name="code" type="java.lang.String"/>
+  </composite-id>
+  <property generated="never" lazy="false" name="count" type="int">
+   <column name="count"/>
+  </property>
+  <many-to-one class="edu.gdut.imis.product.entity.Order"
+   column="orderID" insert="false" name="order" not-null="true" update="false" lazy="false"/>
+  <many-to-one class="edu.gdut.imis.product.entity.ProductModel"
+   column="code" insert="false" name="pm" not-null="true" update="false" lazy="false"/>
+ </class>
+</hibernate-mapping>

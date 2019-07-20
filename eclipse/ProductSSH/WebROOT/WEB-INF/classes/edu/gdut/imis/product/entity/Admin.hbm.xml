@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-6-15 13:45:13 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping default-lazy="false">
+ <class name="edu.gdut.imis.product.entity.Admin" table="admins">
+  <id access="field" name="aID" type="java.lang.String">
+   <column name="aID"/>
+   <generator class="assigned"/>
+  </id>
+  <property access="field" generated="never" lazy="false"
+   name="aNickname" type="java.lang.String">
+   <column name="aNickname"/>
+  </property>
+  <property access="field" generated="never" lazy="false" name="aName" type="java.lang.String">
+   <column name="aName"/>
+  </property>
+  <property access="field" generated="never" lazy="false" name="aSex" type="java.lang.String">
+   <column name="aSex"/>
+  </property>
+  <property access="field" generated="never" lazy="false"
+   name="aPassword" type="java.lang.String">
+   <column name="aPassword"/>
+  </property>
+  <property access="field" generated="never" lazy="false" name="aPhone" type="java.lang.String">
+   <column name="aPhone"/>
+  </property>
+ </class>
+</hibernate-mapping>

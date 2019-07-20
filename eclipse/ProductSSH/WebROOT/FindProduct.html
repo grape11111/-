@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>查找商品界面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+body{text-align:center} 
+</style>
+</head>
+<body>
+<fieldset>
+<legend>商品信息</legend>
+<form action="Product">
+<input type="hidden" name="submitFlag" value="Find">
+<input type="submit" value="查询所有商品信息"> 
+</br>
+</form>
+
+<form action="Product">
+<input type="hidden" name="submitFlag" value="FindBycodename">
+</br>
+<input type="text" name="codename" placeholder="请输入商品条码或名称"> 
+<input type="submit" value="查询">
+</form>
+</fieldset>
+</body>
+</html>

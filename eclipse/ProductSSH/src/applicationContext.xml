@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	 <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="configLocation" value="classpath:hibernate.cfg.xml">
+		</property>
+	</bean>
+	<bean id="productDAO" class="edu.gdut.imis.product.dao.impl.ProductDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	<bean id="productEBO" class="edu.gdut.imis.product.business.ebo.ProductEBO">
+		<property name="bdao" ref="productDAO">
+		</property>
+	</bean>
+	
+	<bean id="usersDAO" class="edu.gdut.imis.product.dao.impl.UsersDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	<bean id="usersEBO" class="edu.gdut.imis.product.business.ebo.UsersEBO">
+		<property name="udai" ref="usersDAO">
+		</property>
+	</bean>
+	
+	<bean id="cartDAO" class="edu.gdut.imis.product.dao.impl.CartDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	<bean id="cartEBO" class="edu.gdut.imis.product.business.ebo.CartEBO">
+		<property name="bdao" ref="cartDAO">
+		</property>
+	</bean>
+	
+	<bean id="adminDAO" class="edu.gdut.imis.product.dao.impl.AdminDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	<bean id="adminEBO" class="edu.gdut.imis.product.business.ebo.AdminEBO">
+		<property name="bdao" ref="adminDAO">
+		</property>
+	</bean>
+<!-- Action -->	
+	<bean id="productAction" class="edu.gdut.imis.product.action.ProductAction">
+		<property name="productEbi" ref="productEBO">
+		</property>
+	</bean>
+	
+	<bean id="usersAction" class="edu.gdut.imis.product.action.UsersAction">
+		<property name="usersEbi" ref="usersEBO">
+		</property>
+	</bean>
+	
+	<bean id="cartAction" class="edu.gdut.imis.product.action.CartAction">
+		<property name="cartEbi" ref="cartEBO">
+		</property>
+	</bean>
+	
+	<bean id="payAction" class="edu.gdut.imis.product.action.PayAction">
+		<property name="payEbi" ref="cartEBO">
+		</property>
+	</bean>
+	
+	<bean id="registerAction" class="edu.gdut.imis.product.action.RegisterAction">
+		<property name="registerEbi" ref="usersEBO">
+		</property>
+	</bean>
+	
+	
+	<bean id="loginAction" class="edu.gdut.imis.product.action.LoginAction">
+		<property name="usersEbi" ref="usersEBO"></property>
+		<property name="adminEbi" ref="adminEBO"></property>
+	</bean>
+</beans>

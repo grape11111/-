@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>商品信息界面</title>
+<style>
+body{text-align:center}
+</style>
+</head>
+<body>
+<form action="${pageContext.request.contextPath}/Product_add" method="post">
+<fieldset>
+<legend>新增商品信息</legend>
+<table width=20% height=260px align="center">
+<!--<tr><td colspan=2 align="center">新增商品信息</td></tr>-->
+<tr><td>商品条码:</td> <td><input type="text" name="code" value="" autocomplete="off"></td></tr>
+<tr><td>商品名称:</td> <td> <input type="text" name="name" value="" autocomplete="off"></td></tr>
+<tr><td>商品类别:</td> <td> <select name="style">
+		<option value="Clothes">服装</option>
+		<option value="Food">食物</option>
+		<option value="Book">图书</option>
+</select></td></tr>
+<tr><td>商品价格:</td><td> <input type="text" name="price" value="" autocomplete="off"></td></tr>
+</table>
+<input type="submit" value="添加"> &nbsp;<input type="reset" value="重置">
+</fieldset>
+</form>
+
+</br>
+</br>
+</body>
+</html>

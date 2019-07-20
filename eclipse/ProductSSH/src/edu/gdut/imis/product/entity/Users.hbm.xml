@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-6-14 17:05:43 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping default-lazy="false">
+ <class name="edu.gdut.imis.product.entity.Users" table="users">
+  <id access="field" name="uID" type="java.lang.String">
+   <column name="uID"/>
+   <generator class="assigned"/>
+  </id>
+  <property access="field" generated="never" lazy="false"
+   name="uNickname" type="java.lang.String">
+   <column name="uNickname"/>
+  </property>
+  <property access="field" generated="never" lazy="false" name="uName" type="java.lang.String">
+   <column name="uName"/>
+  </property>
+  <property access="field" generated="never" lazy="false" name="uSex" type="java.lang.String">
+   <column name="uSex"/>
+  </property>
+  <property access="field" generated="never" lazy="false"
+   name="uPassword" type="java.lang.String">
+   <column name="uPassword"/>
+  </property>
+  <property access="field" generated="never" lazy="false" name="uPhone" type="java.lang.String">
+   <column name="uPhone"/>
+  </property>
+  <property access="field" generated="never" lazy="false"
+   name="uAddress" type="java.lang.String">
+   <column name="uAddress"/>
+  </property>
+  <property generated="never" lazy="false" name="status" type="int">
+   <column name="status"/>
+  </property>
+ </class>
+</hibernate-mapping>

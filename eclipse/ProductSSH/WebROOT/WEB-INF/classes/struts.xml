@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package name="Product" namespace="/" extends="struts-default">
+		<action name="Product_*" class="productAction" method="{1}">
+			<result name="success">/Jsp/BackStage/list.jsp</result>
+			<result name="displayAll">/Jsp/Front/list.jsp</result>
+			<result name="detail">/Jsp/Front/detail.jsp</result>
+			<result name="toUpdate">/Jsp/BackStage/update.jsp</result>
+			<allowed-methods>regex:.*</allowed-methods>
+		</action>
+		
+		<action name="login" class="loginAction" method="loginCh">
+			<result name="login_u">/Jsp/Front/frame_users.jsp</result>
+			<result name="login_a">/Jsp/BackStage/frame.jsp</result>
+			<result name="fail">/Login.jsp</result>
+		</action>
+		<action name="register_*" class="registerAction" method="{1}">
+			<result name="success">/Login.jsp</result>
+			<result name="fail">/register.jsp</result>
+			<result name="uMessage">/Jsp/Front/uMessage.jsp</result>
+			<allowed-methods>regex:.*</allowed-methods>
+		</action>
+		<action name="users_*" class="usersAction" method="{1}">
+			<result name="success">/Jsp/BackStage/UsersMessage.jsp</result>
+			<allowed-methods>regex:.*</allowed-methods>
+		</action>
+		<action name="Pay_*" class="payAction" method="{1}">
+			<result name="success">/Jsp/BackStage/order.jsp</result>
+			<result name="detail">/Jsp/BackStage/orderDetail.jsp</result>
+			<result name="order">/Jsp/Front/pay.jsp</result>
+			<result name="paid">/Jsp/Front/order.jsp</result>
+			
+			<allowed-methods>regex:.*</allowed-methods>
+		</action>
+		<action name="cart_*" class="cartAction" method="{1}">
+			<result name="success">/Jsp/Front/cart.jsp</result>
+			<allowed-methods>regex:.*</allowed-methods>
+		</action>
+	</package>		
+</struts>
